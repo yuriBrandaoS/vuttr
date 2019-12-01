@@ -1,15 +1,11 @@
-import actions from './actions';
-import getters from './getters';
-import mutations from './mutations';
+import Vue from 'vue';
+import Vuex from 'vuex';
+import toolsModule from './modules/tools';
 
-const state = {
-  tools: [],
-};
+Vue.use(Vuex);
 
-export default {
-  namespaced: true,
-  state,
-  actions,
-  getters,
-  mutations,
-};
+export default new Vuex.Store({
+  modules: {
+    tools: toolsModule,
+  },
+});

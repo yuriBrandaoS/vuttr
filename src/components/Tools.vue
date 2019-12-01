@@ -5,27 +5,20 @@
 </template>
 
 <script>
-import axios from 'axios';
+import { mapGetters } from 'vuex';
 import toolsItem from '@/components/ToolsItem.vue';
 
 export default {
-  data() {
-    return {
-      tools: [],
-      tags: [],
-    };
-  },
   components: {
     toolsItem,
   },
   mounted() {
-    console.log('teste');
+    this.$store.dispatch('tools/getTools');
   },
-  async created() {
-    const response = await axios.get('http://localhost:3000/tools');
-
-    this.tools = response.data;
-    this.tags = response.data;
+  computed: {
+    ...mapGetters({
+      tools: 'tools/tools',
+    }),
   },
 };
 </script>

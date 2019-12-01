@@ -1,7 +1,7 @@
-import api from '@/api';
+import API from '@/api';
 
 const getTools = (context) => {
-  api.getAllTools()
+  API.getAllTools()
     .then((response) => {
       context.commit('TOOLS_UPDATE', response.data);
     })
