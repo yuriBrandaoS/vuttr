@@ -1,16 +1,25 @@
 <template>
   <div id="app">
+    <toolsHeader :title="title" :subtitle="subtitle" />
     <Tools />
   </div>
 </template>
 
 <script>
 import Tools from './components/Tools.vue';
+import ToolsHeader from './components/ToolsHeader.vue';
 
 export default {
   name: 'app',
+  data() {
+    return {
+      title: 'VUTTR',
+      subtitle: 'Very Useful Tools to Remember',
+    };
+  },
   components: {
     Tools,
+    ToolsHeader,
   },
 };
 </script>
