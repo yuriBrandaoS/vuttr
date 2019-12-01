@@ -1,12 +1,19 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <Tools />
   </div>
 </template>
+
+<script>
+import Tools from './components/Tools.vue';
+
+export default {
+  name: 'app',
+  components: {
+    Tools,
+  },
+};
+</script>
 
 <style lang="scss">
 #app {
