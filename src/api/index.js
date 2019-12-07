@@ -8,6 +8,13 @@ async function getAllTools() {
     .catch((err) => console.error('getAllTools', err));
 }
 
+async function searchTools() {
+  return axios.get('/tools?title=')
+    .then((response) => response)
+    .catch((err) => console.error('getAllTools', err));
+}
+
 export default {
   getAllTools,
+  searchTools,
 };

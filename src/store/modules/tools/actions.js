@@ -1,15 +1,21 @@
+/* eslint-disable implicit-arrow-linebreak */
 import api from '@/api';
 
-const getTools = (context) => {
+export const getTools = ({ commit }) =>
   api.getAllTools()
     .then((response) => {
-      context.commit('TOOLS_UPDATE', response.data);
+      commit('TOOLS', response.data);
     })
     .catch((err) => {
       console.log('getTools', err);
     });
+
+export const searchTools = ({ commit }, query) => {
+  api.searchTools(query);
+  commit('SEARCH', query);
 };
 
 export default {
   getTools,
+  searchTools,
 };

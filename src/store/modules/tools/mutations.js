@@ -1,7 +1,12 @@
-const TOOLS_UPDATE = (state, tools) => {
+const TOOLS = (state, tools) => {
   state.tools = tools;
 };
 
+const SEARCH = (state, query) => {
+  state.search = query;
+};
+
 export default {
-  TOOLS_UPDATE,
+  TOOLS,
+  SEARCH,
 };
